@@ -52,7 +52,7 @@ $VZug_IP = $R::ip;
 # Create my logging object
 my $log = LoxBerry::Log->new ( 
 	name => 'cronjob',
-	filename => "$lbplogdir/vzug.log",
+	filename => "$lbplogdir/kostal.log",
 	append => 1
 	);
 LOGSTART "Kostal cronjob start";

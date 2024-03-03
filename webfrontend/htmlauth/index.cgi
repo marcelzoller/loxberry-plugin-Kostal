@@ -23,15 +23,15 @@ $cgi->import_names('R');
 # Create my logging object
 my $log = LoxBerry::Log->new ( 
 	name => 'HTTP Settup',
-	filename => "$lbplogdir/vzug.log",
+	filename => "$lbplogdir/kostal.log",
 	append => 1
 	);
-LOGSTART "V-ZUG HTTP start";
+LOGSTART "Kostal HTTP start";
  
  
 # Wir Übergeben die Titelzeile (mit Versionsnummer), einen Link ins Wiki und das Hilfe-Template.
 # Um die Sprache der Hilfe brauchen wir uns im Code nicht weiter zu kümmern.
-LoxBerry::Web::lbheader("V-ZUG Plugin V$version", "http://www.loxwiki.eu/V-Zug/Zoller", "help.html");
+LoxBerry::Web::lbheader("Kostal Plugin V$version", "http://www.loxwiki.eu/Kostal/Zoller", "help.html");
   
 # Wir holen uns die Plugin-Config in den Hash %pcfg. Damit kannst du die Parameter mit $pcfg{'Section.Label'} direkt auslesen.
 my %pcfg;
@@ -101,7 +101,7 @@ $template->param( IP4 => $IP4);
 $template->param(LOXLIST => $MSselectlist);
 $template->param( UDPPORT => $UDPPORT);
 $template->param( WEBSITE => "http://$ENV{HTTP_HOST}/plugins/$lbpplugindir/index.cgi");
-$template->param( LOGDATEI => "/admin/system/tools/logfile.cgi?logfile=plugins/$lbpplugindir/vzug.log&header=html&format=template");
+$template->param( LOGDATEI => "/admin/system/tools/logfile.cgi?logfile=plugins/$lbpplugindir/kostal.log&header=html&format=template");
 $template->param( WEBSTATUS => "http://$ENV{HTTP_HOST}/plugins/$lbpplugindir/status.cgi");
 $template->param( WEBIP1 => "http://$ENV{HTTP_HOST}/plugins/$lbpplugindir/index.cgi?ip=$IP1");
 $template->param( WEBIP2 => "http://$ENV{HTTP_HOST}/plugins/$lbpplugindir/index.cgi?ip=$IP2");
@@ -137,7 +137,7 @@ print $template->output();
 # Schlussendlich lassen wir noch den Footer ausgeben.
 LoxBerry::Web::lbfooter();
 
-LOGEND "V-ZUG Setting finish.";
+LOGEND "Kostal Setting finish.";
 
 ##########################################################################
 # Save data
